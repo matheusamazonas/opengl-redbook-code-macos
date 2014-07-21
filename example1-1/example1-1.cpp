@@ -24,8 +24,6 @@ const GLuint NumVertices = 6;
 //
 void init(void) 
 {
-	glewExperimental = GL_TRUE;
-	glewInit();
 	glGenVertexArrays(NumVAOs, VAOs);
 	glBindVertexArray(VAOs[Triangles]);
 	GLfloat  vertices[NumVertices][2] = 
@@ -98,6 +96,10 @@ int main (int argc, char** argv)
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
 	glfwSwapInterval(1);
+
+	// Initializes the GLEW library
+	glewExperimental = GL_TRUE;
+	glewInit();
 
 	// Prints the OpenGL Version on the terminal
 	//printf("OpenGL Version: %s\n", glGetString(GL_VERSION));
