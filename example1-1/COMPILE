@@ -1,3 +1,0 @@
-#Command line to compile this example:
-
-g++ LoadShaders.cpp  example1-1.cpp -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo -lGLEW -o example1-1

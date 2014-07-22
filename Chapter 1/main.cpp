@@ -9,11 +9,16 @@ using namespace std;
 #include "vgl.h"
 #include "LoadShaders.h" 
 
+// NumVAOs is used as an element count
 enum VAO_IDs { Triangles, NumVAOs };
+// NumBuffers is used as an element count
 enum Buffer_IDs { ArrayBuffer, NumBuffers }; 
 enum Attrib_IDs { vPosition = 0 };
 
+// VAOs stores all Vertex Array Objects
 GLuint  VAOs[NumVAOs];
+// Stores all buffers used. In this example, we use only
+// ArrayBuffers (Buffer_ID = 0)
 GLuint  Buffers[NumBuffers];
 
 const GLuint NumVertices = 6;
@@ -24,7 +29,11 @@ const GLuint NumVertices = 6;
 //
 void init(void) 
 {
+	// Generates 1 Vertex Array. Here we use the enum's
+	// last element to alocate as many as Vertex Arrays
+	// as are in the enum (NumVAOs = 1)
 	glGenVertexArrays(NumVAOs, VAOs);
+	// Binds the triangles Vertex Array (VAOs[0])
 	glBindVertexArray(VAOs[Triangles]);
 	GLfloat  vertices[NumVertices][2] = 
 	{

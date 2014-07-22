@@ -1,0 +1,11 @@
+#Command line to compile this example:
+
+g++ LoadShaders.cpp  example1-1.cpp -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo -lGLEW -o example1-1
+
+The files here are listed on the book as:
+
+main.cpp		example1.1
+triangles.vert		example1.2
+triangles.frag		example1.3
+
+The other files are either on the “lib” or “include” folders in the original book code folder (link on the project README file).

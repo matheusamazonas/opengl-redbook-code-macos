@@ -14,5 +14,8 @@ g++ source_file.cpp -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit 
 We need to use the Cocoa, IOKit and CoreVideo frameworks to use GLFW
 http://www.glfw.org/docs/latest/build.html#build_link_osx
 
+Original Book Code available at:
+http://www.opengl-redbook.com/
+
 
 
