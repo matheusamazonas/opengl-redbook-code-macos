@@ -45,19 +45,32 @@ void init(void)
 		{ -0.85,  0.90 }
 	}; 
 
+	// Creates the buffer's name
 	glGenBuffers(NumBuffers, Buffers);
+	// Binds the buffer (Buffers[0])
 	glBindBuffer(GL_ARRAY_BUFFER, Buffers[ArrayBuffer]); 
+	// Copy the data from the buffer object to OpenGL's server buffer
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices),
 			vertices, GL_STATIC_DRAW);
+	// Set the shaders info
+    // The ShaderINfo array end with a GL_NONE-type shader
+    // ShaderInfo has basically a type and the path to the shader source code
 	ShaderInfo  shaders[] = 
 	{
 		{ GL_VERTEX_SHADER, "triangles.vert" },
 		{ GL_FRAGMENT_SHADER, "triangles.frag" },
 		{ GL_NONE, NULL }
 	};
+
+	// Load the shaders and "run" them
 	GLuint program = LoadShaders(shaders);
 	glUseProgram(program);
+
+	// Connects the shader "in" variables to a vertex-attribute array
+	// vPosition = 0 (declared before)
 	glVertexAttribPointer(vPosition, 2, GL_FLOAT,GL_FALSE, 0, BUFFER_OFFSET(0));
+	// Enable the vertex-attribute array passing the inde xof the attribute
+	//  array pointer we just initialized
 	glEnableVertexAttribArray(vPosition);
 }
 
@@ -67,8 +80,11 @@ void init(void)
 //
 void display(void) 
 {
+	// Clear the Color Buffer with the current color
 	glClear(GL_COLOR_BUFFER_BIT);
+	// Select the collection of vertives we want to draw
 	glBindVertexArray(VAOs[Triangles]);
+	// Actually draws
 	glDrawArrays(GL_TRIANGLES, 0, NumVertices);
 	glFlush(); 
 }
