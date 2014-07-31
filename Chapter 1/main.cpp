@@ -53,8 +53,8 @@ void init(void)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices),
 			vertices, GL_STATIC_DRAW);
 	// Set the shaders info
-    // The ShaderINfo array end with a GL_NONE-type shader
-    // ShaderInfo has basically a type and the path to the shader source code
+	// The ShaderINfo array end with a GL_NONE-type shader
+	// ShaderInfo has basically a type and the path to the shader source code
 	ShaderInfo  shaders[] = 
 	{
 		{ GL_VERTEX_SHADER, "triangles.vert" },
