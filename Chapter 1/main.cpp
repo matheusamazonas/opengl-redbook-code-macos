@@ -123,11 +123,11 @@ int main (int argc, char** argv)
 	glfwSwapInterval(1);
 
 	// Initializes the GLEW library
-	glewExperimental = GL_TRUE;
-	glewInit();
+	//glewExperimental = GL_TRUE;
+	//glewInit();
 
 	// Prints the OpenGL Version on the terminal
-	//printf("OpenGL Version: %s\n", glGetString(GL_VERSION));
+	printf("OpenGL Version: %s\n", glGetString(GL_VERSION));
 
 	init();
 

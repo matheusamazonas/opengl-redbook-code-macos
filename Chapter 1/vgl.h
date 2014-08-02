@@ -1,18 +1,20 @@
 #ifndef __VGL_H__
 #define __VGL_H__
 
+#define GLFW_INCLUDE_GLCOREARB
+
 #define GLEW_STATIC
 
-#include <GL/glew.h>
+#include <OpenGL/gl3.h>
 #include <GLFW/glfw3.h>
 
 #ifdef USE_GL3W
 
-#include <GL3/gl3.h>
+#include <GL3/g2l3.h>
 #include <GL3/gl3w.h>
 
 #else
-
+/*
 #ifdef _MSC_VER
 #  ifdef _DEBUG
 #    if (_MSC_VER >= 1600)
@@ -28,7 +30,7 @@
 #    endif
 #  endif
 #endif
-
+*/
 #endif
 
 #define FREEGLUT_STATIC

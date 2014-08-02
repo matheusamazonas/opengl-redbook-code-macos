@@ -9,7 +9,6 @@
 #include <stdio.h>
 
 #define GLEW_STATIC
-#include <GL/glew.h>
 #include "LoadShaders.h"
 
 #ifdef __cplusplus
@@ -99,13 +98,7 @@ LoadShaders( ShaderInfo* shaders )
         
         ++entry;
     }
-
-#ifdef GL_VERSION_4_1
-    if ( GLEW_VERSION_4_1 ) {
-        // glProgramParameteri( program, GL_PROGRAM_SEPARABLE, GL_TRUE );
-    }
-#endif /* GL_VERSION_4_1 */
-    
+  
     glLinkProgram( program );
 
     GLint linked;
